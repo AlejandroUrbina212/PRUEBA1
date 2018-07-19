@@ -80,40 +80,39 @@ fun main(args: Array<String>) {
 
 
                                 var wantsToContinue2 = true
-                                do{}while(wantsToContinue2)
-                                println(menu2())
-                                print("Ingrese una opcion del menu (1 - 5): ")
-                                val optionmenu2 = readLine()!!.toInt()
-                                when (optionmenu2){
+                                do{
+                                    println(menu2())
+                                    print("Ingrese una opcion del menu (1 - 5): ")
+                                    val optionmenu2 = readLine()!!.toInt()
+                                    when (optionmenu2){
 
 
-                                    1 -> {
-                                        wantsToContinue1=false
-                                    }
-                                    2 ->{
-                                        print("Ingrese el nombre de la nueva tarea: ")
-                                        val nombretarea: String = readLine()!!.toString()
-                                        val newTarea = Tarea (nombretarea)
+                                        1 -> {
+                                            wantsToContinue1=false
+                                        }
+                                        2 ->{
+                                            print("Ingrese el nombre de la nueva tarea: ")
+                                            val nombretarea: String = readLine()!!.toString()
+                                            val newTarea = Tarea (nombretarea)
 
-                                        if (listaSeleccionada.addTarea(newTarea)){
-                                            println("Se ha agregado la tarea")
-                                        }else{
-                                            print("La tarea especificada ya existe")
+                                            if (listaSeleccionada.addTarea(newTarea)){
+                                                println("Se ha agregado la tarea")
+                                            }else{
+                                                print("La tarea especificada ya existe")
+                                            }
+                                        }
+                                        3 -> {
+
+                                        }
+                                        4 ->{
+                                            print(listaSeleccionada.mostrarTareas())
+                                        }
+                                        5 ->{
+                                            wantsToContinue2=false
                                         }
                                     }
-                                    3 -> {
-                                        print(listaSeleccionada.mostrarTareas())
-                                        print("Ingrese el nombre de la tarea a la que desea cambiarle el estado: ")
+                                }while(wantsToContinue2)
 
-
-                                    }
-                                    4 ->{
-                                        print(listaSeleccionada.mostrarTareas())
-                                    }
-                                    5 ->{
-                                        wantsToContinue2=false
-                                    }
-                                }
 
 
 
